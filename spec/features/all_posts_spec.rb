@@ -12,4 +12,14 @@ RSpec.describe "All Posts Page", type: :feature do
       expect(page).to have_content("All Posts")
     end
   end
+
+  describe "Post Listing" do
+    it "displays all posts" do
+      post1 = create(:post, title: 'First Post')
+      post2 = create(:post, title: 'Second Post')
+      visit root_path
+      expect(page).to have_content(post1.title)
+      expect(page).to have_content(post2.title)
+    end
+  end
 end
