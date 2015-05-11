@@ -24,4 +24,18 @@ RSpec.describe Post, type: :model do
       expect(post.excerpt).to eq(excerpt[0..-2])
     end
   end
+
+  describe "scopes" do
+    it "has a scope to pull only draft posts" do
+      create_list(:post, 3, status: "draft")
+      create(:post, status: "published")
+      expect(Post.drafts.count).to eq(3)
+    end
+
+    it "has a scope to pull only published posts" do
+      create_list(:post, 3, status: "published")
+      create(:post, status: "draft")
+      expect(Post.published.count).to eq(3)
+    end
+  end
 end
