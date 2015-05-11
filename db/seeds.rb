@@ -8,14 +8,20 @@
 
 post1 = Post.create(
           title: 'Test Post',
-          body: 'This is some sample body text',
+          body: %Q{### This is a markdown test post
+          
+          This is my very first post using markdown!
+            
+          How do you like it?},
           author: 'Nathan',
           status: 'published'
         )
 
 post2 = Post.create(
           title: 'Another Test Post',
-          body: 'This is some more sample body text... like it?',
+          body: %Q{### This is another markdown test post
+          
+          It has a [link](http://www.google.com)},
           author: 'Not Nathan',
           status: 'draft'
         )

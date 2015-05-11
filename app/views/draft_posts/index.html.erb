@@ -1,0 +1,10 @@
+<h2>Draft Posts</h2>
+
+<% if @posts.length == 0 %>
+  <div class="panel">
+    <h5>No Draft Posts</h5>
+    <p>Only posts marked as 'draft' will show up on this page.</p>
+  </div>
+<% else %>
+  <%= render partial: "posts", locals: {posts: @posts} %>
+<% end %>

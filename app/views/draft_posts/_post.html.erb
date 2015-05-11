@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to post.title, post_path(post) %></td>
+  <td><%= post.author %></td>
+  <td></td>
+  <td><%= post.updated_at %></td>
+  <td><%= link_to "Publish", draft_post_path(post),
+          class: "button tiny success", method: "delete" %></td>
+  <td><%= link_to "Edit", "#", class: "button tiny info" %></td>
+  <td><%= link_to "Delete", "#", class: "button tiny alert" %></td>
+</tr>

@@ -2,12 +2,14 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body Excerpt</th>
       <th>Author</th>
+      <th>Tags</th>
       <th>Date</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <%= render partial: "shared/post", collection: posts %>
+    <%= render partial: "post", collection: posts %>
   </tbody>
 </table>

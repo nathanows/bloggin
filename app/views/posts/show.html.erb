@@ -1,0 +1,7 @@
+<% if @post.status == 'draft' %>
+  <%= render partial: "shared/draft_banner", locals: {post: @post} %>
+<% end %>
+<h2><%= @post.title %></h2>
+<p><em><span><%= @post.author %></span> on: <%= @post.updated_at %></em></p>
+<hr />
+<p><%= markdown(@post.body) %></p>

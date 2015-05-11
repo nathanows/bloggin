@@ -1,0 +1,11 @@
+<br />
+<div class="panel">
+  <h3>This is a draft post. 
+    <%= link_to "Delete", "#", 
+    class: "button small alert right draft-top-btn" %>
+    <%= link_to "Edit", "#", 
+    class: "button small info right draft-top-btn" %>
+    <%= link_to "Publish", draft_post_path(post), 
+    class: "button small success right draft-top-btn", method: "delete" %>
+  </h3>
+</div>
