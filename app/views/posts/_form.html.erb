@@ -1,0 +1,27 @@
+<%= form_for @post do |f| %>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+    </div>
+    <div class="large-6 columns">
+      <%= f.label :status %>
+      <%= f.select :status, [['Draft', 'draft'], ['Published', 'published']] %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "form-body-textarea" %>
+    </div>
+  </div>
+  <div class="row form-submit-box">
+    <%= f.submit "Submit", class: "button success" %>
+  </div>
+<% end %>

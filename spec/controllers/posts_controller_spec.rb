@@ -15,4 +15,11 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "posts#new" do
+    it "is a valid path" do
+      get :new
+      expect(response).to have_http_status(200)
+    end
+  end
 end
