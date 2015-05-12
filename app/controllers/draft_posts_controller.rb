@@ -3,6 +3,12 @@ class DraftPostsController < ApplicationController
     @posts = Post.drafts
   end
 
+  def create
+    @post = Post.find(params[:post_id])
+    @post.update_attribute(:status, "draft")
+    redirect_to draft_posts_path
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.update_attribute(:status, "published")

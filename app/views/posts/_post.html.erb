@@ -3,6 +3,8 @@
   <td><%= post.author %></td>
   <td></td>
   <td><%= post.updated_at %></td>
+  <td><%= link_to "Unpublish", draft_posts_path(post_id: post.id),
+          class: "button tiny", method: "post" %></td>
   <td><%= link_to "Edit", "#", class: "button tiny info" %></td>
   <td><%= link_to "Delete", post_path(post), class: "button tiny alert",
           method: "delete" %></td>
