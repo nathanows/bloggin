@@ -9,7 +9,7 @@ RSpec.describe "Post Page", type: :feature do
     end
   end
 
-  describe "Post Listing" do
+  describe "Post Show" do
     it "displays a post with markdown" do
       test_post = create(:post,
         body: %Q{####Test Title
@@ -44,6 +44,21 @@ RSpec.describe "Post Page", type: :feature do
       within('.panel') do
         expect(page).to have_content("Published Post")
       end
+    end
+  end
+
+  describe "Post Comments" do
+    it "displays all post comments" do
+      test_post = create(:post)
+      test_post.comments << create(:comment, body: "This is a comment.")
+      visit post_path(test_post)
+      expect(page).to have_content("This is a comment")
+    end
+
+    it "displays a message that there are no comments" do
+      test_post = create(:post)
+      visit post_path(test_post)
+      expect(page).to have_content("No comments for this post.")
     end
   end
 end

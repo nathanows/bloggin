@@ -8,3 +8,12 @@
 <p><em>by <span><%= @post.author %></span> on: <%= @post.updated_at %></em></p>
 <hr />
 <p><%= markdown(@post.body) %></p>
+
+<hr />
+<br />
+<h3>Comments</h3>
+<% if @comments.length == 0 %>
+  <p><strong>No comments for this post.</strong></p>
+<% else %>
+  <%= render partial: "comment", collection: @comments %>
+<% end %>

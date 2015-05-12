@@ -39,3 +39,15 @@ post4 = Post.create(
           author: 'Someone',
           status: 'published'
         )
+
+post1.comments << Comment.create(body: "This is a comment", author: "Some Guy")
+post1.comments << Comment.create(body: "This is another comment", author: "Some Girl")
+post1.comments << Comment.create(body: "heh", author: "Troll")
+
+post2.comments << Comment.create(body: "This is a comment", author: "Some Guy")
+post2.comments << Comment.create(body: "This is another comment", author: "Some Girl")
+post2.comments << Comment.create(body: "heh", author: "Troll")
+
+post3.comments << Comment.create(body: "This is a comment", author: "Some Guy")
+post3.comments << Comment.create(body: "This is another comment", author: "Some Girl")
+post3.comments << Comment.create(body: "heh", author: "Troll")
