@@ -20,7 +20,7 @@ RSpec.describe "Post Creation", type: :feature do
       select "Published", :from => "post[status]"
       fill_in "post[body]", with: "Some post body content"
       click_link_or_button "Submit"
-      expect(current_path).to eq(posts_path)
+      expect(current_path).to eq(root_path)
       expect(page).to have_content("Test Post")
     end
 

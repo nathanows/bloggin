@@ -3,7 +3,7 @@
   <h3>Draft Post 
     <%= link_to "Delete", post_path(post), 
     class: "button small alert right draft-top-btn", method: "delete" %>
-    <%= link_to "Edit", "#", 
+    <%= link_to "Edit", edit_post_path(post), 
     class: "button small info right draft-top-btn" %>
     <%= link_to "Publish", draft_post_path(post), 
     class: "button small success right draft-top-btn", method: "delete" %>

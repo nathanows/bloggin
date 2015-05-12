@@ -20,6 +20,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      redirect_to redirect_url(@post)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -33,6 +46,6 @@ class PostsController < ApplicationController
   end
 
   def redirect_url(post)
-    post.status == "draft" ? draft_posts_path : posts_path
+    post.status == "draft" ? draft_posts_path : root_path
   end
 end
