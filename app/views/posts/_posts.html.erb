@@ -1,15 +1,30 @@
-<table>
+<table class="post-table">
   <thead>
     <tr>
       <th>Title</th>
       <th>Author</th>
       <th>Tags</th>
       <th>Posted At</th>
+      <th>Comments</th>
       <th></th>
       <th></th>
       <th></th>
     </tr>
   </thead>
+  <tfoot>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>
+        <%= render partial: "shared/tag_select", locals: {tags: @tags} %>
+      </th>
+      <th>Posted At</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </tfoot>
   <tbody>
     <%= render partial: "post", collection: posts %>
   </tbody>

@@ -41,3 +41,18 @@
 .new-comment-box {
   padding: 15px;
 }
+
+.post-table {
+  width: 100%;
+}
+
+input.post-col-search {
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+select.tag-select {
+  margin-top: 3px;
+  margin-bottom: 0;
+  min-width: 90px;
+}

@@ -14,7 +14,8 @@ post1 = Post.create(
             
           How do you like it?},
           author: 'Nathan',
-          status: 'published'
+          status: 'published',
+          tag_list: 'A, B, C, D'
         )
 
 post2 = Post.create(
@@ -23,21 +24,24 @@ post2 = Post.create(
           
           It has a [link](http://www.google.com)},
           author: 'Not Nathan',
-          status: 'draft'
+          status: 'draft',
+          tag_list: 'A, C'
         )
 
 post3 = Post.create(
           title: 'And Another Test Post',
           body: 'This is even more sample body text... I know you like it.',
           author: 'Nathan',
-          status: 'draft'
+          status: 'draft',
+          tag_list: 'B, C, D'
         )
 
 post4 = Post.create(
           title: 'Final Test Post',
           body: 'This is the last sample body text',
           author: 'Someone',
-          status: 'published'
+          status: 'published',
+          tag_list: 'A, D'
         )
 
 post1.comments << Comment.create(body: "This is a comment", author: "Some Guy")

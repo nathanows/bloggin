@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'redcarpet'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 group :development, :test do
   gem 'byebug'
