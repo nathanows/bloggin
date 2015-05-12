@@ -5,4 +5,9 @@ FactoryGirl.define do
     author "John Doe"
     status "published"
   end
+
+  factory :comment do
+    body  "This is a comment."
+    author "John Doe"
+  end
 end
