@@ -14,16 +14,25 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_url = @post.status == "draft" ? draft_posts_path : posts_path
-      redirect_to redirect_url
+      redirect_to redirect_url(@post)
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to redirect_url(@post)
   end
 
   private
 
   def post_params
     params.require(:post).permit(:title, :author, :body, :status)
+  end
+
+  def redirect_url(post)
+    post.status == "draft" ? draft_posts_path : posts_path
   end
 end

@@ -6,5 +6,6 @@
   <td><%= link_to "Publish", draft_post_path(post),
           class: "button tiny success", method: "delete" %></td>
   <td><%= link_to "Edit", "#", class: "button tiny info" %></td>
-  <td><%= link_to "Delete", "#", class: "button tiny alert" %></td>
+  <td><%= link_to "Delete", post_path(post), class: "button tiny alert",
+          method: "delete" %></td>
 </tr>
