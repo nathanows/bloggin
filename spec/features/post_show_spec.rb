@@ -69,5 +69,15 @@ RSpec.describe "Post Page", type: :feature do
       click_link_or_button "Submit"
       expect(page).to have_content("Comment body.")
     end
+
+    it "can delete comments" do
+      test_post = create(:post)
+      test_post.comments << create(:comment, body: "This is a comment.")
+      visit post_path(test_post)
+      within(".comment") do
+        click_link_or_button "Delete"
+      end
+      expect(page).to_not have_content("This is a comment.")
+    end
   end
 end

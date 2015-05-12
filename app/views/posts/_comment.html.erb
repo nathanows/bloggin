@@ -1,4 +1,12 @@
-<div class="panel">
-  <p><em><%= comment.author %> said on <%= comment.updated_at %>:</em></p>
+<div class="panel comment">
+  <p>
+    <em><%= comment.author %> said on <%= comment.updated_at %>:</em>
+    <span class="right">
+      <%= link_to "Delete",
+        post_comment_path(post_id: post.id, id: comment.id),
+        method: "delete" %>
+    </span>
+  </p>
+  <hr />
   <p><%= markdown(comment.body) %></p>
 </div>
