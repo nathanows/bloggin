@@ -10,6 +10,7 @@
   <span class="right"> Tagged with: <%= @post.tag_list %></em></span>
 </p>
 <hr />
+<%= image_tag @post.banner.url(:banner) %>
 <p><%= markdown(@post.body) %></p>
 
 <hr />
