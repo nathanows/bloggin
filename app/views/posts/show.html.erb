@@ -17,3 +17,23 @@
 <% else %>
   <%= render partial: "comment", collection: @comments %>
 <% end %>
+
+<div class="panel new-comment-box">
+  <%= form_for [@post, @comment] do |f| %>
+    <div class="row">
+      <div class="large-9 columns">
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-9 columns">
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+      </div>
+      <div class="large-3 columns form-submit-box">
+        <%= f.submit "Submit", class: "button success comment-submit-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>

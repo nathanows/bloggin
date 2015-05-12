@@ -29,7 +29,7 @@ RSpec.describe "Post Page", type: :feature do
         And body},
         status: "draft")
       visit post_path(test_post)
-      within('.panel') do
+      within('.banner') do
         expect(page).to have_content("Draft Post")
       end
     end
@@ -41,7 +41,7 @@ RSpec.describe "Post Page", type: :feature do
         And body},
         status: "published")
       visit post_path(test_post)
-      within('.panel') do
+      within('.banner') do
         expect(page).to have_content("Published Post")
       end
     end
@@ -59,6 +59,15 @@ RSpec.describe "Post Page", type: :feature do
       test_post = create(:post)
       visit post_path(test_post)
       expect(page).to have_content("No comments for this post.")
+    end
+
+    it "can create new comments" do
+      test_post = create(:post)
+      visit post_path(test_post)
+      fill_in "comment[author]", with: "Person"
+      fill_in "comment[body]", with: "Comment body."
+      click_link_or_button "Submit"
+      expect(page).to have_content("Comment body.")
     end
   end
 end
