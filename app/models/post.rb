@@ -10,4 +10,8 @@ class Post < ActiveRecord::Base
   def excerpt
     body.split(" ").slice(0,50).join(" ")
   end
+
+  def post_time
+    self.updated_at.strftime("%b %e, %l:%M %p")
+  end
 end

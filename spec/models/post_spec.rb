@@ -24,6 +24,12 @@ RSpec.describe Post, type: :model do
       excerpt = "test " * 10
       expect(post.excerpt).to eq(excerpt[0..-2])
     end
+
+    it "has a post_time method that formats dates" do
+      post = create(:post)
+      formatted_time = post.updated_at.strftime("%b %e, %l:%M %p")
+      expect(post.post_time).to eq(formatted_time)
+    end
   end
 
   describe "scopes" do
