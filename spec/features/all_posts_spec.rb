@@ -24,4 +24,15 @@ RSpec.describe "All Posts Page", type: :feature do
       expect(page).to_not have_content(post3.title)
     end
   end
+
+  describe "Published Post Unpublication" do
+    it "unpublishes a post when the Unpublish button is pressed" do
+      post1 = create(:post, title: "Test Draft Post", status: "published")
+      visit root_path
+      click_link_or_button "Unpublish"
+      expect(page).to have_content(post1.title)
+      visit root_path
+      expect(page).to_not have_content(post1.title)
+    end
+  end
 end

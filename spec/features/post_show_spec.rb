@@ -12,12 +12,12 @@ RSpec.describe "Post Page", type: :feature do
   describe "Post Listing" do
     it "displays a post with markdown" do
       test_post = create(:post,
-        body: %Q{###Test Title
+        body: %Q{####Test Title
 
         And body},
         status: "published")
       visit post_path(test_post)
-      within('h3') do
+      within('h4') do
         expect(page).to have_content("Test Title")
       end
     end
@@ -30,7 +30,19 @@ RSpec.describe "Post Page", type: :feature do
         status: "draft")
       visit post_path(test_post)
       within('.panel') do
-        expect(page).to have_content("This is a draft post.")
+        expect(page).to have_content("Draft Post")
+      end
+    end
+
+    it "displays a show banner for published posts" do
+      test_post = create(:post,
+        body: %Q{###Test Title
+
+        And body},
+        status: "published")
+      visit post_path(test_post)
+      within('.panel') do
+        expect(page).to have_content("Published Post")
       end
     end
   end
