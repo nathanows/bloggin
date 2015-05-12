@@ -44,7 +44,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :author, :body, :status)
+    params.require(:post).permit(:title, :author, :body, :status, :tag_list)
   end
 
   def redirect_url(post)

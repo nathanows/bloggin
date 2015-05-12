@@ -17,6 +17,12 @@
   </div>
   <div class="row">
     <div class="large-12 columns">
+      <%= f.label "Tags (comma separated)" %>
+      <%= f.text_field :tag_list %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
       <%= f.label :body %>
       <%= f.text_area :body, class: "form-body-textarea" %>
     </div>

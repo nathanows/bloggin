@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
+  acts_as_taggable
 
   validates :title, :author, :body, :status, presence: true
   validates :status, inclusion: { in: %w(draft published) }

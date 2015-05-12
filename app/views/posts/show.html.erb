@@ -5,7 +5,10 @@
 <% end %>
 
 <h2><%= @post.title %></h2>
-<p><em>by <span><%= @post.author %></span> on: <%= @post.post_time %></em></p>
+<p>
+  <em>by </em><strong><%= @post.author %></strong><em> on: <%= @post.post_time %>
+  <span class="right"> Tagged with: <%= @post.tag_list %></em></span>
+</p>
 <hr />
 <p><%= markdown(@post.body) %></p>
 

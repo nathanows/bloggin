@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'redcarpet'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do
   gem 'byebug'

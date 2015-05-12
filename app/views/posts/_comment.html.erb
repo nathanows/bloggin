@@ -1,6 +1,7 @@
 <div class="panel comment">
   <p>
-    <em><%= comment.author %> said on <%= comment.post_time %>:</em>
+    <strong><%= comment.author %></strong>
+    <em> said on <%= comment.post_time %>:</em>
     <span class="right">
       <%= link_to "Delete",
         post_comment_path(post_id: post.id, id: comment.id),
