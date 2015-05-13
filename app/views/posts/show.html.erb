@@ -16,10 +16,13 @@
 <hr />
 <br />
 <h3>Comments</h3>
-<% if @comments.length == 0 %>
-  <p><strong>No comments for this post.</strong></p>
-<% else %>
-  <%= render partial: "comment", collection: @comments, locals: {post: @post} %>
-<% end %>
+<div class="comments">
+  <% if @comments.length == 0 %>
+    <p id="no-comments"><strong>No comments for this post.</strong></p>
+  <% else %>
+    <%= render partial: "comment", collection: @comments, locals: {post: @post} %>
+  <% end %>
+  
+</div>
 
 <%= render partial: "new_comment", locals: {comment: @comment, post: @post} %>

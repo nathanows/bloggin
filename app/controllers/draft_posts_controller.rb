@@ -1,7 +1,7 @@
 class DraftPostsController < ApplicationController
   def index
     @posts = Post.drafts
-    @tags  = ActsAsTaggableOn::Tag.order(:name)
+    @tags  = Post.draft_tags
   end
 
   def create

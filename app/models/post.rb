@@ -17,4 +17,14 @@ class Post < ActiveRecord::Base
   def post_time
     self.updated_at.strftime("%b %e, %l:%M %p")
   end
+
+  def self.draft_tags
+    tags = drafts.inject [] { |a, v| a += v.tag_list; a }
+    tags.uniq.sort
+  end
+
+  def self.published_tags
+    tags = published.inject [] { |a, v| a += v.tag_list; a }
+    tags.uniq.sort
+  end
 end

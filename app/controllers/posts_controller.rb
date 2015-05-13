@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.published
-    @tags  = ActsAsTaggableOn::Tag.order(:name)
+    @tags  = Post.published_tags
   end
 
   def show
